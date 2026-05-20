@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surat Spesial</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ffe3e3, #ffd3f0);
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      position: relative;
+      width: 320px;
+    }
+
+    /* Amplop */
+    .envelope {
+      width: 100%;
+      height: 220px;
+      background: #ff9aa2;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+
+    .envelope:hover {
+      transform: scale(1.03);
+    }
+
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 110px;
+      background: #ffb3c1;
+      clip-path: polygon(0 0, 100% 0, 50% 100%);
+      transition: transform 0.8s ease;
+      transform-origin: top;
+    }
+
+    .opened .flap {
+      transform: rotateX(180deg);
+    }
+
+    /* Isi Surat */
+    .letter {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 90%;
+      height: 0;
+      opacity: 0;
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      overflow-y: auto;
+      transition: all 1s ease;
+    }
+
+    .show-letter {
+      height: 70vh;
+      opacity: 1;
+      top: 55%;
+    }
+
+    .letter::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .letter::-webkit-scrollbar-thumb {
+      background: #ff7b97;
+      border-radius: 10px;
+    }
+
+    h2 { text-align: center; margin-bottom: 10px; }
+    p { line-height: 1.6; }
+
+  </style>
+</head>
+<audio id="bg-music" loop>
+    <source src="Music3.mp3" type="audio/mpeg" />
+  </audio>
+<body>
+
+  <div class="container">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+    </div>
+    <div class="letter" id="letter">
+      <h2>For You, Aisyah Martana Salsabila</h2>
+      <p>
+Just a little message,
+<br>
+<br>
+Heii, i know maybe akhir akhir ini hidup kamu rasanya capek banget yaa. kayak semuanya dateng barengan dan ga ngasih kamu waktu buat napas. kuliah, pertemanan, hubungan, ekspektasi orang, overthinking tiap malam, semuanya numpuk jadi satu. dan aku tau kamu udah berusaha kuat selama ini walaupun sering pura pura bilang “aku gapapa” padahal dalemnya lagi hancur.
+<br>
+<br>
+Jujur yaa, aku sedih banget waktu kamu bilang kamu cape sama hidup dan bahkan kepikiran buat nyerah. because honestly? dunia bakal kehilangan banyak banget hal baik kalau kamu pergi. Kamu mungkin ngerasa diri kamu ga berharga sekarang, apalagi setelah terus terusan diremehin, dibanding bandingin, atau dibuat ngerasa ga cukup sama orang lain even your own boyfriend. But please, jangan pernah percaya kalau value diri kamu ditentuin dari cara seseorang memperlakukan kamu.
+<br>
+<br>
+Kamu itu jauh lebih berharga dari yang kamu kira.
+<br>
+<br>
+Aku kenal kamu udah hampir 10 tahun. dari SD sampai sekarang. dan selama itu juga aku liat sendiri kamu tuh orang yang selalu berusaha ada buat orang lain. kamu selalu dengerin cerita orang, bantu orang walaupun diri sendiri lagi capek, bikin suasana jadi lebih hidup, dan tanpa sadar banyak orang ngerasa nyaman cuma karena ada kamu. seriously, you have that kind of presence. mungkin kamu sendiri ga sadar, tapi banyak banget orang yang hidupnya jadi lebih ringan karena kenal kamu.
+<br>
+<br>
+Aku tau mungkin sekarang kamu lagi ngerasa kosong. kayak semua effort yang kamu kasih ga pernah cukup buat bikin orang ngehargain kamu. tapi please, kamu ga harus nyakitin diri sendiri cuma karena orang lain gagal ngehargain kamu.
+<br>
+<br>
+Dan soal hubungan kamu sekarang… aku tau itu bukan hal yang gampang. aku tau kamu bertahan karena kamu sayang. dan aku juga tau kamu udah berkali kali berusaha memperbaiki semuanya. aku ga akan maksa kamu harus gimana, karena itu pilihan kamu. tapi aku cuma pengen kamu inget satu hal.
+<br>
+<br>
+Someone who truly loves you should never make you feel worthless.
+<br>
+<br>
+Orang yang sayang sama kamu seharusnya bikin kamu ngerasa aman, didengerin, dihargai, bukan malah bikin kamu mempertanyakan harga diri kamu sendiri setiap hari.
+<br>
+<br>
+Dan kalau sekarang kamu masih bertahan sambil sakit terus, please jangan lupa buat tetap sayang sama diri kamu sendiri juga yaa.
+<br>
+<br>
+Aku tau kamu kuat. tapi kamu juga manusia. kamu boleh capek, boleh nangis, boleh istirahat. kamu ga harus selalu jadi strong girl buat semua orang. sometimes it’s okay to break down too. dan kalau suatu hari semuanya terasa terlalu berat, jangan dipendem sendirian ya? cerita aja. marah aja. nangis aja. aku bakal dengerin.
+<br>
+<br>
+Karena jujur, aku sangat bersyukur bisa kenal kamu selama ini. dan aku gamau kamu hilang cuma karena dunia lagi jahat sama kamu caa.
+<br>
+<br>
+Please stay. stay for the people who genuinely love you. stay for the better days yang mungkin sekarang belum keliatan. stay because one day kamu bakal sadar kalau semua rasa sakit ini ga akan selamanya. and stay because you deserve to see yourself happy too.
+<br>
+<br>
+Kamu berharga. lebih dari yang kamu pikirin. lebih dari yang orang lain pernah bilang ke kamu. dan kamu pantas dicintai dengan benar.
+<br>
+<br>
+i’m always here for you, okay? always.
+        <br>
+        <br>
+        <a href="bunga.html">a little gift</a>
+      </p>
+    </div>
+  </div>
+
+  <script>
+    const envelope = document.getElementById("envelope");
+    const letter = document.getElementById("letter");
+const music = document.getElementById("bg-music");
+
+    envelope.addEventListener("click", () => {
+      envelope.classList.add("opened");
+      setTimeout(() => {
+        letter.classList.add("show-letter");
+      }, 600);
+    });
+    
+envelope.addEventListener("click", () => {
+    envelope.classList.add("opened");
+
+    // Play music setelah user klik
+    music.play().catch(err => {
+      console.log("Music blocked:", err);
+    });
+
+    setTimeout(() => {
+      letter.classList.add("show-letter");
+    }, 600);
+  });
+  </script>
+
+</body>
+</html>
